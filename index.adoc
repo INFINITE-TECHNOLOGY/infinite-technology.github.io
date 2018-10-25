@@ -57,5 +57,6 @@ Granularity of injected code can be defined by the user (programmer) up to:
 * Statement transformation, Statement-level logging
 * Expression transformation, Expression-level logging
 
-https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint
-https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/
+.References:
+* https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint
+* https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/
