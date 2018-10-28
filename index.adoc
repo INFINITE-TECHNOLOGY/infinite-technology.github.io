@@ -1,6 +1,6 @@
-# Projects summary
+= Projects summary
 
-## BlackBox
+== BlackBox
 
 BlackBox Annotation automatically injects a lot of logging code into user-defined Groovy methods/constructors without affecting the user program logic. +
 Granularity of injected code can be defined by the user (programmer) up to:
