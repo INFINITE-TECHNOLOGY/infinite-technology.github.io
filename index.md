@@ -32,5 +32,7 @@ Granularity of injected code can be defined by the user (programmer) up to:
 * Expression transformation, Expression-level logging
 
 References:
-* [BlackBox Documentation](https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint)
+* [BlackBox Documentation](https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki)
 * [BlackBox Repository](https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/)
+* [Groovydoc](https://i-t.io/BlackBox/groovydoc/2_0_x/)
+* [XSD](https://i-t.io/BlackBox/xsd/2_x_x/BlackBox.xsd)
