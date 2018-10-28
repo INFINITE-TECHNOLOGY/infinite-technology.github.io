@@ -1,3 +1,5 @@
+# Home
+
 ## About
 
 Infinite Technology ∞ is a non-profit based, non-commercial open-source software foundation established in 2018.
