@@ -7,7 +7,7 @@
     <xs:complexType name="ASTNodeList">
         <xs:annotation>
             <xs:documentation>
-                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint#astnodelist
+                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki#astnodelist
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>

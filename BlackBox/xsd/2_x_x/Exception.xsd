@@ -6,7 +6,7 @@
     <xs:complexType name="Exception">
         <xs:annotation>
             <xs:documentation>
-                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint#exception
+                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki#exception
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>

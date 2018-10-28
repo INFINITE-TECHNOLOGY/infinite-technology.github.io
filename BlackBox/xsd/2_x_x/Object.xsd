@@ -6,7 +6,7 @@
     <xs:complexType name="Object">
         <xs:annotation>
             <xs:documentation>
-                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint#object
+                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki#object
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>

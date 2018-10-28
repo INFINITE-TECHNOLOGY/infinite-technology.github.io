@@ -6,7 +6,7 @@
         elementFormDefault="qualified">
     <xs:annotation>
         <xs:documentation>
-            https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint#blackbox-xsd
+            https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki#blackbox-xsd
         </xs:documentation>
     </xs:annotation>
     <!---->

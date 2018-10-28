@@ -9,7 +9,7 @@
     <xs:complexType name="Expression">
         <xs:annotation>
             <xs:documentation>
-                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint#expression-1
+                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki#expression-1
             </xs:documentation>
         </xs:annotation>
         <xs:complexContent>

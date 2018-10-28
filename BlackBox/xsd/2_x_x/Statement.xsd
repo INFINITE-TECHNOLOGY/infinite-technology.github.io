@@ -7,7 +7,7 @@
     <xs:complexType name="Statement">
         <xs:annotation>
             <xs:documentation>
-                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint#statement-1
+                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki#statement-1
             </xs:documentation>
         </xs:annotation>
         <xs:complexContent>

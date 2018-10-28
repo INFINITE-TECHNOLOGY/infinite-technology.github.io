@@ -10,7 +10,7 @@
     <xs:complexType name="MethodNode">
         <xs:annotation>
             <xs:documentation>
-                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint#methodnode
+                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki#methodnode
             </xs:documentation>
         </xs:annotation>
         <xs:complexContent>

@@ -6,7 +6,7 @@
     <xs:complexType name="Argument">
         <xs:annotation>
             <xs:documentation>
-                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki/Blueprint#argument
+                https://github.com/INFINITE-TECHNOLOGY/BLACKBOX/wiki#argument
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
