@@ -4,7 +4,9 @@
 
 Infinite Technology ∞ is a non-profit based, non-commercial open-source software foundation established in 2018.
 
-## Contacts
+## References
+
+[Infinite Technology Maven Repository](https://i-t.io/m2/)
 
 [Infinite Technology at GitHub](https://github.com/INFINITE-TECHNOLOGY/infinite-technology.github.io)
 
