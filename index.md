@@ -8,8 +8,6 @@ Infinite Technology ∞ is a non-profit based, non-commercial open-source softwa
 
 [Infinite Technology at GitHub](https://github.com/INFINITE-TECHNOLOGY/infinite-technology.github.io)
 
-[Infinite Technology Maven Repository](https://i-t.io/m2)
-
 [Discussion and issue tracking](https://github.com/INFINITE-TECHNOLOGY/infinite-technology.github.io/issues)
 
 ## Mission
