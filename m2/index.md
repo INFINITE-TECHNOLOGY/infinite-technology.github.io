@@ -4,7 +4,7 @@ Welcome to Infinite Technology ∞ Maven Repository.
 
 This is a Maven compatible repository so it can be imported like any other Maven repository into compatible build system (Maven, Gradle, Grape, etc).
 
-This repository contains artifacts related to Infinite Technology [Projects](https://i-t.io/index.html#Projects).
+This repository contains artifacts related to Infinite Technology [Projects](https://i-t.io/index.html#projects).
 
 All artifacts in this repository belong to group **io.infinite**.
 
@@ -25,6 +25,8 @@ dependencies {
 ```
 
 ## Artifacts
+
+Please refer to the below list of available published artifacts:
 
 |Name|Version|Comments|
 |---|---|---|
