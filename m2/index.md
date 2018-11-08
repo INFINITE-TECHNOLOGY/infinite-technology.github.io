@@ -8,10 +8,6 @@ This repository contains artifacts related to Infinite Technology [Projects](htt
 
 All artifacts in this repository belong to group **io.infinite**.
 
-> To host your artifacts in our repository create a 
-[pull request](https://github.com/INFINITE-TECHNOLOGY/infinite-technology.github.io/compare?expand=1)
-(m2 directory).
-
 ## Example Usage
 
 ```groovy
