@@ -4,7 +4,9 @@
 
 Infinite Technology ∞ is a non-profit based, non-commercial open-source software foundation established in 2018.
 
-## Contacts
+## References
+
+[Infinite Technology Maven Repository](https://i-t.io/m2/)
 
 [Infinite Technology at GitHub](https://github.com/INFINITE-TECHNOLOGY/infinite-technology.github.io)
 
@@ -14,9 +16,23 @@ Infinite Technology ∞ is a non-profit based, non-commercial open-source softwa
 
 Our mission is to streamline Web and Mobile app development by standardizing and systemizing the primary infrastructure components:
 
-- Logging code automation
-- User login & API Security
-- HATEOAS (HAL) Frontend SDK
+* Logging code automation
+* User login & API Security
+* HATEOAS (HAL) Frontend SDK
+
+## Become a member/contributor
+
+* Migrate your existing projects to be hosted as part of our organization:
+    - Source code: Create a 
+[request](https://github.com/INFINITE-TECHNOLOGY/infinite-technology.github.io/issues/new)
+for creating a dedicated repository under
+[Infinite Technology GitHub Organization](https://github.com/INFINITE-TECHNOLOGY)
+where you can migrate and host your source code.
+    - Create a [pull request](https://github.com/INFINITE-TECHNOLOGY/infinite-technology.github.io/compare?expand=1)
+               (m2 directory) to host your artifacts.
+    - Contribute to our existing [projects](https://i-t.io/index.html#projects) by Testing, Fixing Bugs and creating new features.
+    Just create a pull request to one of the Project repositories.
+    - Start working on our perspective project: HATEOAS (HAL) Frontend SDK.
 
 ## Projects
 
