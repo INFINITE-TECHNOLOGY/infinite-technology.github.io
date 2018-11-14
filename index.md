@@ -1,12 +1,8 @@
 # Home
 
-## About
+## Mission
 
 Infinite Technology ∞ is a non-profit based, non-commercial open-source software foundation established in 2018.
-
-[Infinite Technology Maven Repository](https://i-t.io/m2/)
-
-## Mission
 
 Our mission is to streamline Web and Mobile app development by standardizing and systemizing the primary infrastructure components:
 
@@ -15,6 +11,8 @@ Our mission is to streamline Web and Mobile app development by standardizing and
 * HATEOAS (HAL) Frontend SDK
 
 ## Projects
+
+Our projects are hosted in [Infinite Technology Maven Repository](https://i-t.io/m2/)
 
 ### BlackBox
 
