@@ -1,6 +1,4 @@
-# ∞
-
-## Mission
+# Mission
 
 Infinite Technology ∞ is a non-profit based, non-commercial open-source software foundation established in 2018.
 
@@ -10,11 +8,11 @@ Our mission is to streamline Web and Mobile app development by standardizing and
 * User login & API Security
 * HATEOAS (HAL) Frontend SDK
 
-## Projects
+# Projects
 
 Our projects are hosted in [Infinite Technology Maven Repository](https://i-t.io/m2/)
 
-### BlackBox
+## BlackBox
 
 BlackBox is a logging code automation solution.
 
