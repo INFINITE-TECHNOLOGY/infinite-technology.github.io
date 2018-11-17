@@ -85,7 +85,7 @@ Receiving
 
 Happy hacking!
 
-Live Groovy. Code Groovy.
+***Live Groovy. Code Groovy.***
 
 <div id="disqus_thread"></div>
 <script>
