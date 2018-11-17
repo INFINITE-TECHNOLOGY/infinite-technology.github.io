@@ -1,4 +1,4 @@
-# Groovy Traits static and instance init blocks
+# Intinite Technology ∞ Blog
 
 Welcome to Intinite Technology ∞ Blog!
 
