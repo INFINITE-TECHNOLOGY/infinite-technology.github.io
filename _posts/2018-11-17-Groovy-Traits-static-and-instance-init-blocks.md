@@ -2,10 +2,12 @@
 title: Groovy Traits static and instance init blocks
 tags: java groovy traits
 category: java
+published: true
 ---
-
-# Groovy Traits static and instance init blocks
-
+---
+layout: post
+title: Groovy Traits static and instance init blocks
+---
 Welcome to Intinite Technology ∞ Blog and this is our first post!
 
 Today we will show a very small example of a new useful Groovy Traits feature: 
@@ -18,4 +20,3 @@ Let's consider below use case:
 * Every instantiation increments a static counter ("instance #")
 * Upon instantiation, it is needed to automatically set thread name to Simple Class Name + instance #, e.g.:
     - SenderThread1, SenderThread2, etc...
-
