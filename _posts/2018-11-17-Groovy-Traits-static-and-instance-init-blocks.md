@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Groovy Traits static and instance init blocks
 tags: java groovy traits
 category: java
