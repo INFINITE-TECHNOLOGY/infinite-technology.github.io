@@ -4,26 +4,26 @@
 
 This is our first post!
 
-Today we will show an example of a new useful Groovy Traits feature: 
+Today we will show an example of a new useful **Groovy Traits** feature: 
 - Multiple inheritance of static and instance init blocks
 
 Note: it seems that this is first post about this feature as it was implemented just a few days back thanks to Groovy Team and [paulk_asert](https://groovy-community.slack.com/team/U2P6GPHHC).
 
 Let's consider below use case:
-* Several classes extend java.lang.Thread and are instantiated into a limited number of instances
-* These classes are not within same inheritance hierarchy except for the common Thread ancestor
+* Several classes extend **same ancestor class** (e.g. java.lang.Thread) and are instantiated into a **limited number of instances**
+* These classes are **not within same inheritance hierarchy** except for the above common ancestor
 * However these classes share certain traits:
-    * Every instantiation increments a static counter ("instance #")
+    * Every instantiation increments a static counter (**"instanceCounter"**)
     * Upon instantiation, it is needed to automatically set thread name to Simple Class Name + instance #, e.g.:
-        - SenderThread1, SenderThread2, ReceiverThread1, ReceiverThread2, etc...
+        - **SenderThread1, SenderThread2, ReceiverThread1, ReceiverThread2, etc...**
 
-This is a classical example when multiple inheritance can be applied.
+This is a classical example when **multiple inheritance** can be applied.
 
-Moreover - this is the case when static and instance [init blocks](https://stackoverflow.com/a/3987586/7727700) can be used.
+Moreover - this is the case when static and instance **[init blocks](https://stackoverflow.com/a/3987586/7727700)** can be used.
 
 Java does not support multiple inheritance except for the interfaces.
 
-That is where Groovy comes to our help - with the awesome "traits" concept.
+That is where **Groovy** comes to our help - with the awesome **"traits"** concept.
 
 And starting from Groovy version 2.5.5 - the "traits" can support init blocks - allowing multiple inheritance of initialization traits.
 
