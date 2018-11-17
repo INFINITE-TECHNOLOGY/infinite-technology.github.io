@@ -4,7 +4,7 @@ Welcome to Intinite Technology ∞ Blog!
 
 * 2018
     * 17th November
-        * [Groovy Traits static and instance init blocks](/2018-11-17-Groovy-Traits-static-and-instance-init-blocks.html)
+        * [Groovy Traits static and instance init blocks](/blog/2018-11-17-Groovy-Traits-static-and-instance-init-blocks.html)
 
 <div id="disqus_thread"></div>
 <script>
