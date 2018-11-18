@@ -27,11 +27,22 @@ That is where **Groovy** comes to our help - with the awesome **"traits"** conce
 
 And starting from Groovy version 2.5.5 - the "traits" can support init blocks - allowing multiple inheritance of initialization traits.
 
+> Note: If class implements more than 1 trait containing static init block - all the static init blocks are invoked.
+To illustrate this we added "InitLoggingTrait".
+
 Let's try it out!
 
 ```groovy
-trait InitializationTrait {
-    static Integer instanceCounter
+trait InitLoggingTrait {
+    static {
+        printlnFormatted "Init Class"
+    }
+    static void printlnFormatted(String string) {
+        System.out.println(String.format("%s : %s : %s", Thread.currentThread().getName().padRight(30), getMetaClass().getTheClass().getSimpleName().padRight(30), string))
+    }
+}
+trait InstanceCounterTrait {
+    static private Integer instanceCounter //immutable, non-shareable
     static {
         instanceCounter = 0
     }
@@ -40,20 +51,19 @@ trait InitializationTrait {
         setName(getClass().getSimpleName() + instanceCounter)
     }
 }
-class SenderThread extends Thread implements InitializationTrait {
-    @Override
+class SenderThread extends Thread implements InstanceCounterTrait, InitLoggingTrait {
     void run() {
-        System.out.println("Starting thread " + getName())
-        System.out.println("Sending")
+        printlnFormatted "Run (Sending)"
     }
 }
-class ReceiverThread extends Thread implements InitializationTrait {
-    @Override
+class ReceiverThread extends Thread implements InstanceCounterTrait, InitLoggingTrait {
     void run() {
-        System.out.println("Starting thread " + getName())
-        System.out.println("Receiving")
+        printlnFormatted "Run (Receiving)"
     }
 }
+Thread.currentThread().setName("Main")
+System.out.println("Thread Name".padRight(30) + " : " + "Class Name".padRight(30) + " : Message")
+System.out.println("---------------------------------------------------------------------------")
 (0..3).each {
     new SenderThread().start()
     Thread.sleep(200)
@@ -65,22 +75,18 @@ class ReceiverThread extends Thread implements InitializationTrait {
 And the result:
 
 ```
-Starting thread SenderThread1
-Sending
-Starting thread ReceiverThread1
-Receiving
-Starting thread SenderThread2
-Sending
-Starting thread ReceiverThread2
-Receiving
-Starting thread SenderThread3
-Sending
-Starting thread ReceiverThread3
-Receiving
-Starting thread SenderThread4
-Sending
-Starting thread ReceiverThread4
-Receiving
+Thread Name                    : Class Name                     : Message
+---------------------------------------------------------------------------
+Main                           : SenderThread                   : Init Class
+SenderThread1                  : SenderThread                   : Run (Sending)
+Main                           : ReceiverThread                 : Init Class
+ReceiverThread1                : ReceiverThread                 : Run (Receiving)
+SenderThread2                  : SenderThread                   : Run (Sending)
+ReceiverThread2                : ReceiverThread                 : Run (Receiving)
+SenderThread3                  : SenderThread                   : Run (Sending)
+ReceiverThread3                : ReceiverThread                 : Run (Receiving)
+SenderThread4                  : SenderThread                   : Run (Sending)
+ReceiverThread4                : ReceiverThread                 : Run (Receiving)
 ```
 
 Happy hacking!
