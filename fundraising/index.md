@@ -1,4 +1,4 @@
-# Intinite Fundraising ∞
+# Infinite Fundraising ∞
 
 Thank you for helping us to complete our Mission!
 
