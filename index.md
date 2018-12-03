@@ -49,3 +49,38 @@ System.setProperty("blackbox.mode", BlackBoxMode.SEQUENTIAL.value())
 
 foobar("foo")
 ```
+
+## Bobbin
+
+Bobbin is a Groovy Slf4j-compatible logger designed for multi-threaded applications.
+
+Bobbin leverages the concept of Logback sifting appender while providing much more easier configuration.
+
+**Sample configuration:**
+
+```json
+{
+  "levels": "['trace', 'debug', 'info', 'warn', 'error'].contains(level)",
+  "classes": "className.contains('io.infinite.')",
+  "destinations": [
+    {
+      "name": "io.infinite.bobbin.destinations.FileDestination",
+      "properties": {
+        "fileKey": "threadName + level",
+        "fileName": "\"./LOGS/${threadName}/${level}/${threadName}_${level}_${date}.log\"",
+        "zipFileName": "\"./LOGS/${threadName}/${level}/ARCHIVE/${threadName}_${level}_${date}.zip\"",
+        "cleanupZipFileName": "\"${origFileName}_${System.currentTimeMillis().toString()}.zip\""
+      },
+      "format": "\"${dateTime}|${level}|${threadName}|${className}|${event.message}\\n\"",
+      "levels": "['trace', 'debug', 'info', 'warn', 'error'].contains(level)",
+      "classes": "className.contains('io.infinite.')"
+    },
+    {
+      "name": "io.infinite.bobbin.destinations.ConsoleDestination",
+      "format": "\"${dateTime}|${level}|${threadName}|${className}|${event.message}\\n\"",
+      "levels": "['trace', 'debug', 'info', 'warn', 'error'].contains(level)",
+      "classes": "className.contains('io.infinite.')"
+    }
+  ]
+}
+```
