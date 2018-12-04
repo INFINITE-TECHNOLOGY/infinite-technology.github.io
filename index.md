@@ -63,8 +63,8 @@ References:
 
 ```json
 {
-  "levels": "['trace', 'debug', 'info', 'warn', 'error'].contains(level)",
-  "classes": "className.contains('io.infinite.')",
+  "levels": "['debug', 'info', 'warn', 'error'].contains(level)",
+  "classes": "all",
   "destinations": [
     {
       "name": "io.infinite.bobbin.destinations.FileDestination",
@@ -75,14 +75,25 @@ References:
         "cleanupZipFileName": "\"${origFileName}_${System.currentTimeMillis().toString()}.zip\""
       },
       "format": "\"${dateTime}|${level}|${threadName}|${className}|${event.message}\\n\"",
-      "levels": "['trace', 'debug', 'info', 'warn', 'error'].contains(level)",
+      "levels": "all",
       "classes": "className.contains('io.infinite.')"
+    },
+    {
+      "name": "io.infinite.bobbin.destinations.FileDestination",
+      "properties": {
+        "fileName": "\"./LOGS/App_${date}.log\"",
+        "zipFileName": "\"./LOGS/App_${date}.zip\"",
+        "cleanupZipFileName": "\"${origFileName}_${System.currentTimeMillis().toString()}.zip\""
+      },
+      "format": "\"${dateTime}|${level}|${threadName}|${className}|${event.message}\\n\"",
+      "levels": "['warn', 'error'].contains(level)",
+      "classes": "all"
     },
     {
       "name": "io.infinite.bobbin.destinations.ConsoleDestination",
       "format": "\"${dateTime}|${level}|${threadName}|${className}|${event.message}\\n\"",
-      "levels": "['trace', 'debug', 'info', 'warn', 'error'].contains(level)",
-      "classes": "className.contains('io.infinite.')"
+      "levels": "['warn', 'error'].contains(level)",
+      "classes": "all"
     }
   ]
 }
