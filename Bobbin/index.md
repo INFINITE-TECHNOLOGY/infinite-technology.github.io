@@ -23,25 +23,22 @@ References:
         "cleanupZipFileName": "\"${origFileName}_${System.currentTimeMillis().toString()}.zip\""
       },
       "format": "\"${dateTime}|${level}|${threadName}|${className}|${event.message}\\n\"",
-      "levels": "all",
-      "classes": "className.contains('io.infinite.')"
+      "classes": "className.contains('your.package.name.')"
     },
     {
       "name": "io.infinite.bobbin.destinations.FileDestination",
       "properties": {
-        "fileName": "\"./LOGS/App_${date}.log\"",
-        "zipFileName": "\"./LOGS/App_${date}.zip\"",
+        "fileName": "\"./LOGS/WARNINGS_AND_ERRORS_${date}.log\"",
+        "zipFileName": "\"./LOGS/WARNINGS_AND_ERRORS_${date}.zip\"",
         "cleanupZipFileName": "\"${origFileName}_${System.currentTimeMillis().toString()}.zip\""
       },
       "format": "\"${dateTime}|${level}|${threadName}|${className}|${event.message}\\n\"",
-      "levels": "['warn', 'error'].contains(level)",
-      "classes": "all"
+      "levels": "['warn', 'error'].contains(level)"
     },
     {
       "name": "io.infinite.bobbin.destinations.ConsoleDestination",
       "format": "\"${dateTime}|${level}|${threadName}|${className}|${event.message}\\n\"",
-      "levels": "['warn', 'error'].contains(level)",
-      "classes": "all"
+      "levels": "['warn', 'error'].contains(level)"
     }
   ]
 }
