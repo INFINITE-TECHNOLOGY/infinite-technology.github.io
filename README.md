@@ -18,7 +18,7 @@ BlackBox is a logging code automation solution.
 
 BlackBox Annotation automatically injects a lot of logging code into user-defined Groovy methods/constructors without affecting the user program logic.
 
-* [See more](https//i-t.io/BlackBox/)
+* [See more](./BlackBox/)
 
 ## Bobbin
 
