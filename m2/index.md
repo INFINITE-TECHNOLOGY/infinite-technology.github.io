@@ -28,7 +28,7 @@ dependencies {
 
 Please refer to the below list of available published artifacts:
 
-|Name|Version|Comments|
+|Name|Version|Comments|Gradle|
 |---|---|---|
-|BlackBox|2.0.0|Release|
-|Bobbin|1.0.0|Release|
+|BlackBox|2.0.0|Release|compile 'io.infinite:blackbox:2.0.0'|
+|Bobbin|1.0.0|Release|compile 'io.infinite:bobbin:1.0.0'|
