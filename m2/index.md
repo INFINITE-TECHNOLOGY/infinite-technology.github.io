@@ -30,5 +30,5 @@ Please refer to the below list of available published artifacts:
 
 |Name|Version|Comments|
 |---|---|---|
-|BlackBox|2.0.0|Demo version of BlackBox 2.0.0|
+|BlackBox|2.0.0|Release|
 |Bobbin|1.0.0|Release|
