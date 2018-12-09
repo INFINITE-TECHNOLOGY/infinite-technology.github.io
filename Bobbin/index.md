@@ -5,6 +5,7 @@ Bobbin is a Groovy Slf4j-compatible logger designed for multi-threaded applicati
 Bobbin leverages the concept of Logback sifting appender while providing much more easier configuration.
 
 References:
+* [Bobbin Documentation](https://i-t.io/Bobbin/documentation)
 * [Bobbin at GitHub](https://github.com/INFINITE-TECHNOLOGY/BOBBIN/)
 
 **Sample configuration:**
@@ -23,7 +24,7 @@ References:
         "cleanupZipFileName": "\"${origFileName}_${System.currentTimeMillis().toString()}.zip\""
       },
       "format": "\"${dateTime}|${level}|${threadName}|${className}|${event.message}\\n\"",
-      "classes": "className.contains('your.package.name.')"
+      "classes": "className.contains('io.infinite.')"
     },
     {
       "name": "io.infinite.bobbin.destinations.FileDestination",
