@@ -7,32 +7,35 @@ implementing an Slf4j-compatible logging library written in Groovy language.
 
 ## In short
 
-Bobbin creates separate log files per thread supporting Groovy Scripts in all aspects of logging configuration.
+Bobbin creates isolated log files per thread with simple configuration using Groovy Scripts to compute dynamic parameter 
+values during run-time.
 
 ## Introduction
 
 ### Foreword
 
-In Java world logging has always been an underdeveloped area.
-This caused a diversity of logging libraries:
+Possibly due to a certain lack of theoretical provision, Logging has always been an zone of turbulence in the Java world.
+This caused a diversity of logging libraries to appear over the time, such as:
 - Log4j
-- JUL
-- Apache Commons Logging
+- Java Util Logging
+- Commons Logging
 - Logback
 - Log4j2
 
-Everyone of them trying to cover the limitations of another, while introducing new pitfalls.
+Aiming to address the limitations of others, each one of them unfortunately has been bringing its own shortcomings.
 
-Things got improved with the adaptation of Slf4j as a logging abstraction layer.
+While from the code standardization perspective things got improved with the adaptation of Slf4j as a logging 
+abstraction layer, there are still unresolved issues in the existing logging frameworks.
 
-It is time to take the full advantage of Slf4j and create an ultimate logger.
+As an Open Source Community, we are taking an initiative to come up with a new experimental approach to create a 
+lightweight yet functionally saturated Logger using up-to-date technology such as JSR 223 and Groovy.
 
 ### The Problem
 
-> Existing logging solutions have only partial support for scripting in configuration.
+> Existing logging solutions provide only partial support for scripting in configuration.
 
 We end up doing declarative programming in logger configuration (XML, JSON, YAML, programmatic configuration) rather 
-than configuring logger to interpret imperative scripts (Groovy, JavaScript) at run-time.
+than configuring logger dynamically interpret configuration values during run-time using imperative scripting.
 
 Let's consider the example of Logback configuration to filter to log only INFO messages:
 ```xml
@@ -43,25 +46,33 @@ Let's consider the example of Logback configuration to filter to log only INFO m
 </filter>
 ```
 
-This is a typical example of XML programming.
+This is a typical example of declarative XML programming.
 
-> Existing logging solutions are either under- or over-isolated.
+> There is a disconnect between how the log data is produced by the application and how it is being consumed by the Logger
 
-Loggers are defined either:
-- In Class static field - shareable by all threads, but lacking easy per-thread configuration 
-- In instance field - causing overhead in initialization and unnecessary isolation
+As a historical practice, existing Loggers are defined either in:
+- Class static field
+- Instance field - causing overhead in initialization and unnecessary isolation
 
-This causes functional limitations in configuration, file naming, separation and archiving.
+This narrows down the scope of each specific logger to the context of its own class or object in terms of consumption of 
+log data.
+
+But the application flow is **not driven by the class structure** rather being enclosed into an **execution stack**, which is 
+having a guaranteed immutable anchor - the **thread** in which the stack is being executed.
+
+In practice this misconception causes functional limitations for existing loggers such as:
+- Complicated configuration of file naming, log separation and archiving
+- Depending on log declaration (static or instance):
+  - Static logger: shareable by all threads, but lacking easy per-thread configuration 
+  - Instance logger: causing overhead in initialization and unnecessary isolation
 
 For example:
 - Logback supports maximum 1 "discriminator" in "SiftingAppender"
 - SiftingAppender has limitations in support of archiving and rolling policies
 - Complicated configuration of "RoutingAppender" in Log4j2
 
-There is a whole subclass of Java applications which is harmed due to this - batch processing multi-threaded applications.
-
-As per our subjective understanding the situation happened because the existing logging solutions were developed without 
-keeping in mind Financial and other business areas where such applications are broadly used.
+There is a class of Java applications heavily relying on un-managed (or semi-un-managed such as task executors) 
+multithreading - batch processing applications - which should be taken more into the focus of Logger functionality.
 
 ### The Solution
 
