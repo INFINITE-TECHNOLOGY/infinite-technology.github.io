@@ -214,7 +214,19 @@ Bobbin should be possible to integrate standalone (or using Slf4j) in any valid 
 
 ### Performance optimization
 
+As a base principle of Bobbin development - efforts are taken to perform performance testing and profiling in order to optimize Bobbin code from the performance perspective.
+
 ## Solution Architecture
+
+<img src="https://i-t.io/Bobbin/documentation/images/Bobbin_Diagram.png" alt="Bobbin Architecture Diagram"/>
+
+- Actual Bobbin loggers are stored in Singleton ThreadLocal - 1 and only 1 per thread
+- Logging messages are dispatched to Bobbin loggers via BobbinNameAdapters which can be referenced in instance or static fields
+in classes
+- BobbinNameAdapter is lightweight class and provides its individual instances via LoggerFactory.getLogger with quick initialization.
+- All thread-specific Bobbin loggers share same configuration (Bobbin.json) and can multiple File Destinations
+- File Destination holds File Name Mask which is computed for every Log message, therefore resulting in multiple 
+log files attached to every File Destination.
 
 ## Usage
 
