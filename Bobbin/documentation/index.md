@@ -30,14 +30,14 @@ abstraction layer, there are still unresolved issues in the existing logging fra
 As an Open Source Community, we are taking an initiative to come up with a new experimental approach to create a 
 lightweight yet functionally saturated Logger using up-to-date technology such as JSR 223 and Groovy.
 
-### The Problem
+### The Problems
 
 > Existing logging solutions provide only partial support for scripting in configuration.
 
 We end up doing declarative programming in logger configuration (XML, JSON, YAML, programmatic configuration) rather 
 than configuring logger dynamically interpret configuration values during run-time using imperative scripting.
 
-Let's consider the example of Logback configuration to filter to log only INFO messages:
+Let's consider the example of Logback filter configuration to log only INFO messages:
 ```xml
 <filter class="ch.qos.logback.classic.filter.LevelFilter">
   <level>INFO</level>
@@ -48,17 +48,37 @@ Let's consider the example of Logback configuration to filter to log only INFO m
 
 This is a typical example of declarative XML programming.
 
+Note: Logback supports Groovy Script filter - but it is applicable only on specific appender, not on Logger.
+
+And there is no support for Groovy message text formatting (encoder pattern).
+
+> It is impossible to configure log level on the appender level
+
+Let's take examples of Logback and Log4j2.
+
+- Appenders are defined separately from Loggers and Loggers reference the appender using "AppenderRef".
+- Only Loggers accept Level and Class Name configuration
+
+Let's say we would like to exclude Debug of class Foo from a specific log file, without affecting other log files and classes.
+
+In Logback this is solved using Groovy Script Filter on Appender, but when we have many appenders - configuration size grows
+quickly.
+
+> Log files per log level
+
+> Overriding Root Level
+
 > There is a disconnect between how the log data is produced by the application and how it is being consumed by the Logger
 
 As a historical practice, existing Loggers are defined either in:
 - Class static field
 - Instance field - causing overhead in initialization and unnecessary isolation
 
-This narrows down the scope of each specific logger to the context of its own class or object in terms of consumption of 
+This reduces the scope of each specific logger instance to the context of its owner class or object in terms of consumption of 
 log data.
 
-But the application flow is **not driven by the class structure** rather being enclosed into an **execution stack**, which is 
-having a guaranteed immutable anchor - the **thread** in which the stack is being executed.
+However the application flow is **not driven by the class structure** rather being reflected into a dynamic 
+**execution stack**, which is having a guaranteed immutable anchor - the **thread** in which the stack is being executed.
 
 In practice this misconception causes functional limitations for existing loggers such as:
 - Complicated configuration of file naming, log separation and archiving
@@ -70,9 +90,6 @@ For example:
 - Logback supports maximum 1 "discriminator" in "SiftingAppender"
 - SiftingAppender has limitations in support of archiving and rolling policies
 - Complicated configuration of "RoutingAppender" in Log4j2
-
-There is a class of Java applications heavily relying on un-managed (or semi-un-managed such as task executors) 
-multithreading - batch processing applications - which should be taken more into the focus of Logger functionality.
 
 ### The Solution
 
@@ -272,6 +289,7 @@ log files attached to every File Destination.
   * format
   * dateFormat
   * dateTimeFormat
+* Root settings
 * FileDestination
    * Properties
      * fileKey
