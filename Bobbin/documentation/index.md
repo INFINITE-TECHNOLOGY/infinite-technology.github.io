@@ -300,8 +300,7 @@ Add Bobbin dependency to pom.xml:
 <dependency>
   <groupId>io.infinite</groupId>
   <artifactId>bobbin</artifactId>
-  <version>1.0.0</version>
-  <type>pom</type>
+  <version>2.0.0</version>
 </dependency>
 ```
 
@@ -320,7 +319,7 @@ repositories {
 Add Bobbin dependency to build.gradle:
 
 ```groovy
-compile 'io.infinite:bobbin:1.0.0'
+compile 'io.infinite:bobbin:2.0.0'
 ```
 
 ### Groovy
