@@ -311,9 +311,7 @@ Add repository to build.gradle:
 
 ```groovy
 repositories {
-    maven {
-        url  "https://dl.bintray.com/infinite-technology/m2" 
-    }
+    jcenter()
 }
 ```
 
